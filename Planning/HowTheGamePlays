@@ -1,0 +1,18 @@
+The game will play in a similar way to the pokemon games for the gameboy. 
+
+Using a turn based system the player will choose and attack from the buttons on screen.
+Upon pressing the button the game will work out if the attack hit or missed.
+If the attack hits a message will appear to screen from a list of possible attack messages.
+If the attack hits then the enemy will loose health depending on the attack damage.
+If the attack missed a message will appear to the screen from a list of possible miss messages.
+If the attack misses then the turn will continue.
+
+The enemy will then attack.
+The game will choose an attack for the enemy.
+The game will then see if the attak hit or missed.
+If the attack hits then the player will loose health depending on the damage of the attack.
+If the attack hits then a message will appear to screen from a list of attack messages.
+If the attack misses then a message will appear to the screen from a list of miss messages.
+If the attack misses then the turn will continue.
+
+This will continue until one of the characters health values will drop to or below 0.

@@ -1,0 +1,115 @@
+Game Runner Class
+
+VARIABELS
+
+METHODS
+
+-playerTriesToAttack() - runs the method in the game class for handling the player's attack.
+
+-enemyTriesToAttack() - runs the method in the game class for handling the enemy's attack.
+
+-turnInGame() - runs a turn in the game.
+
+runGame() - runs the turns in a game but has the end game parameters. 
+
+endGame() - decides on the paramater for ending the game - player's, or enemy's health dropping to 0 or lower
+
+Game Class
+
+VARIABLES
+
+METHODS
+
+-playerAttacks() - this method will take in the attack that the user has selected and will run the correct method from the player class. - takes in String(attack) and returns ?
+
+-enemyAttacks() - this method will deal with the enemy attacking, it will be in charge of running the correct method from the enemy class - takes in String(attack) and returns ?
+
+-playerTakesDamage() - this method will run the methods in the player class for the player to take damage. takes in int(damage) and returns ?
+
+-enemyTakesDamage() - this method will run the methods in the enemy's class for the enemy to take damage - takes in int(damage) and returns ?
+
+-playerPowersUp() - this method will run the methods to allow the user to power up from the player class - takes in ? returns ?
+
+-playerHitOrMiss() - this method will randomly decide if the players attack hits or misses the enemy. This class will use a random number to decide between attacking or missing. There will be a greater chance of hitting - takes in ? returns ?
+
+-enemyHitOrMiss() - this method will randomly decide if the players attacks hit or miss the player. This class will use a random number to decide between attacking or missing, There will be a greater chance of hitting - takes in ? returns ? 
+
+
+Player Class 
+
+VARIABLES
+
+-name       - String
+-Health     -int
+-attackValues  -lightAttack   -int
+                -heavyAttack   -int
+                -unconventionalAttack  -int
+                -powerUp   -boolean
+
+METHODS
+
+getters
+
+-getName() - get the players name - Returns String
+-getHealth() - get the players health - Returns int
+-getLightAttack() - get the damage value for the players light attack - returns int
+-getHeavyAttack() - get the damage value for the players heavy attack - returns int
+-getUnconventionalAttack() - get the damage value for the players unconventional attack - returns int
+-getPowerUp() - get the status for the players choice on powering up - returns boolean
+
+methods dealing with the players atacks
+
+-lightAttack() - does the logic behind the player attacking with a light attack - returns ?
+               - ?Also contains the logic behind displaying the attack to the screen?
+-heavyAttack() - does the logic behind the player attacking with a heavy attack - returns ?
+               - ?Also contains the logic behind displaying the attack to the screen?
+-unconventionalAttack() - does the logic behind the player attacking with an unconventional attack - retruns ?
+               - ?Also contains the logic behind displaying the attack to the screen?
+
+methods that deal with the player attacking
+
+-attack() - does the logic behind deciding if the player can attack and calls the attack method relevent to the attack the player wants to carry out.
+
+-takesDamage() - does the logic behind making the player take damage.
+
+
+Enemy Interface
+
+METHODS
+
+-attack() - does the logic behind deciding what attack the enemy uses if they attack.
+
+-takesDamage() - does the logic behind the enemy taking damage.
+
+Enemy Class
+
+VARIABLES
+
+-name   -String
+-type   -String
+-health   -int
+-attackValues  -lightAttack     -int
+                -heavyAttack    -int
+                -specialAttack  -int
+
+METHODS
+
+getters
+
+getName() - get the enemy's name - returns String.
+getType() - get the enemy's type - returns String.
+getHealth() - get the enemy's health - returns int.
+getLightAttack() - gets the enemy's light attack value - returns int.
+getHeavyAttack() - gets the enemy's heavy attack value - returns int.
+getSpecialAttack() - gets the enemy's special attack value - returns int.
+
+methods dealing with the enemy attacking
+
+-lightAttack() - deals with the logic behind the enemy attacking with a light attack - returns?
+               -?Also deals with the logic behind displaying the attack to the screen?
+
+-heavyAttack() - deals with the logic behind the enemy using a heavy attack - returns ?
+               -?Also deals with the logic behind displaying the attack to the screen?
+
+-specialAttack() - deals with the logic behind the enemy using their special attack -returns ?
+                 -?Also deals with the logic behind displaying the attack to the screen?

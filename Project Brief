@@ -1,0 +1,18 @@
+Project Brief
+
+Goal: Create a Text based boxing based game.
+
+Based on the game that I have previously made during my time at University. The game will be text based rather than animated, as the animation will take to long to develop, as research has shown this will to grand a task. This will be an Android app that allows the player to play the game as a text based game.
+
+The game will have user interaction will have interaction in a similar way to the pokemon games, the user will have the option of 4 buttons that will allow the user to select the option that they want to in the fight phase.
+
+MVP
+
+The player will have to be able to interact with the game and attack the opponent.
+The player will have attributes, such as health, attack value...
+The game will display the game to the screen in text form.
+
+Extension:
+
+The ability to add difficulty.
+Multiple fights.

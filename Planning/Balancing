@@ -1,0 +1,10 @@
+Player could just spam the highest damaging attack!
+  
+  -Player has to use the weakest attack x amount of times to unlock the heavier attacks.
+      -Use a counter for the weak attacks
+
+How to make the enemy difficult but not too hard or easy
+
+  -Use a random number generator to decide what attack the enemy can use.
+  -Hevier hitting attacks are harder to "roll".
+

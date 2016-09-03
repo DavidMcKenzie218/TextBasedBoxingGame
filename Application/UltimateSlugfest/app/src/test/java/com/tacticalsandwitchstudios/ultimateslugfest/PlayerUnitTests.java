@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 
 /**
  * Created by user on 03/09/2016.
@@ -61,4 +62,10 @@ public class PlayerUnitTests {
     public void playerHasUsedASpecialAttack(){
         assertEquals("Special Punch", player.playerHasUsedSpecialAttack(0));
     }
+
+    @Test
+    public void playerHasMissed(){
+        assertEquals("Miss", player.playerHasMissed(0));
+    }
+
 }

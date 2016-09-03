@@ -1,38 +1,30 @@
 package com.tacticalsandwitchstudios.ultimateslugfest;
 
-import java.lang.reflect.Array;
-
-import static java.lang.Math.random;
-
 /**
  * Created by user on 03/09/2016.
  */
-public class Player {
+public class HeavyweightBoxer implements Enemyable {
 
-    private String mName;
+    String mName = "BoneCrusher";
     private int mHealth = 100;
     private int mLightAttackValue = 10;
     private int mHeavyAttackValue = 15;
     private int mSpecialAttackValue = 25;
-    private boolean mPowerUpAvalible = false;
 
     private String[] mLightAttacks = {"Light Punch"};
     private String[] mHeavyAttacks = {"Heavy Punch"};
     private String[] mSpecialAttacks = {"Special Punch"};
     private String[] mMiss = {"Miss"};
 
-    //GETTERS
 
-    public Player(String name){
-        mName = name;
+    public HeavyweightBoxer(){
+
     }
+
+    //GETTERS
 
     public String getName(){
         return mName;
-    }
-
-    public int getHealth(){
-        return mHealth;
     }
 
     public int getLightAttackValue(){
@@ -47,28 +39,21 @@ public class Player {
         return mSpecialAttackValue;
     }
 
-    public boolean hasThePlayerGotPowerUp(){
-        return mPowerUpAvalible;
-    }
+    //INTERFACE
 
-    //ATTACKS__OUTPUT
-
-    public String playerHasUsedLightAttack(int attackNumber){
+    public String lightAttackOutput(int attackNumber){
         return mLightAttacks[attackNumber];
     }
 
-    public String playerHasUsedHeavyAttack(int attackNumber){
+    public String heavyAttackOutput(int attackNumber){
         return mHeavyAttacks[attackNumber];
     }
 
-    public String playerHasUsedSpecialAttack(int attackNumber){
+    public String specialAttackOutput(int attackNumber){
         return mSpecialAttacks[attackNumber];
     }
 
-    public String playerHasMissed(int missNumber){
-        return  mMiss[missNumber];
+    public void damageTaken(int damage){
+
     }
-
-
-
 }

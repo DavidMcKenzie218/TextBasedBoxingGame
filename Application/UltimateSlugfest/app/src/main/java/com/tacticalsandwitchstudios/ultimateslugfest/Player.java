@@ -65,6 +65,10 @@ public class Player {
         return mSpecialAttacks.length;
     }
 
+    public int missLength(){
+        return mMiss.length;
+    }
+
     //ATTACKS__OUTPUT
 
     public String playerHasUsedLightAttack(int attackNumber){

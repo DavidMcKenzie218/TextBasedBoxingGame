@@ -1,5 +1,7 @@
 package com.tacticalsandwitchstudios.ultimateslugfest;
 
+import android.util.Log;
+
 /**
  * Created by user on 03/09/2016.
  */
@@ -21,15 +23,19 @@ public class Ring {
        int  attackNumber = (int)(Math.random()*playerAttackLength(attack));
         return playerAttackOutput(attackNumber, attack);
     }
-    
+
+    public String playerHasMissed(){
+        int missNumber = (int)(Math.random()*mPlayer.missLength());
+        return mPlayer.playerHasMissed(missNumber);
+    }
 
     public int playerAttackLength(String attack){
         if (attack == "Light Attack"){
-            return mPlayer.getLightAttackValue();
+            return mPlayer.lightAttackLenght();
         }else if (attack == "Heavy Attack"){
-            return mPlayer.getHeavyAttackValue();
+            return mPlayer.heavyAttackLength();
         } else if (attack == "Special Attack"){
-            return mPlayer.getSpecialAttackValue();
+            return mPlayer.specialAttackLength();
         }else{
             return 0;
         }

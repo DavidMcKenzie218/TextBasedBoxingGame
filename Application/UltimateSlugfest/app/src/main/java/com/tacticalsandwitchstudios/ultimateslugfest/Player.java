@@ -51,6 +51,20 @@ public class Player {
         return mPowerUpAvalible;
     }
 
+    //ARRAY LENGTHS
+
+    public int lightAttackLenght(){
+        return mLightAttacks.length;
+    }
+
+    public int heavyAttackLength(){
+        return mHeavyAttacks.length;
+    }
+
+    public int specialAttackLength(){
+        return mSpecialAttacks.length;
+    }
+
     //ATTACKS__OUTPUT
 
     public String playerHasUsedLightAttack(int attackNumber){

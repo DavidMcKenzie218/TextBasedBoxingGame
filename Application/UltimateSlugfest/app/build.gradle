@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.2"
 
     defaultConfig {
-        applicationId "com.tacticalsandwitchstudios.alloutslugfest"
+        applicationId "com.tacticalsandwitchstudios.ultimateslugfest"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1

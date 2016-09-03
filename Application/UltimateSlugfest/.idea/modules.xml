@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AllOutSlugfest.iml" filepath="$PROJECT_DIR$/AllOutSlugfest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UltimateSlugfest.iml" filepath="$PROJECT_DIR$/UltimateSlugfest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -1,4 +1,4 @@
-package com.tacticalsandwitchstudios.alloutslugfest;
+package com.tacticalsandwitchstudios.ultimateslugfest;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

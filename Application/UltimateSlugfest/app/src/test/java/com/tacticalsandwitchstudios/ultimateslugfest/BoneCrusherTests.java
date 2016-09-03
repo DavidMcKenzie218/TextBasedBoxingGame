@@ -23,6 +23,11 @@ public class BoneCrusherTests {
     }
 
     @Test
+    public void boneCrusherHasHealth(){
+        assertEquals(100, boneCrusher.getHealth());
+    }
+
+    @Test
     public void boneCrusherLightAttackValue(){
         assertEquals(10, boneCrusher.getLightAttackValue());
     }

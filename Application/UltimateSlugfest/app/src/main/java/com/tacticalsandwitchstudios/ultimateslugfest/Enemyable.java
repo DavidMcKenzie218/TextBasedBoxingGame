@@ -5,6 +5,8 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
  */
 public interface Enemyable {
 
+    int getHealth();
+
     String lightAttackOutput(int attackNumber);
     String heavyAttackOutput(int attackNumber);
     String specialAttackOutput(int attackNumber);

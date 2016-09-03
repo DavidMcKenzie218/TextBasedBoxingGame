@@ -27,6 +27,10 @@ public class HeavyweightBoxer implements Enemyable {
         return mName;
     }
 
+    public int getHealth(){
+        return mHealth;
+    }
+
     public int getLightAttackValue(){
         return mLightAttackValue;
     }

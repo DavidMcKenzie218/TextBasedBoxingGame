@@ -43,6 +43,18 @@ public class HeavyweightBoxer implements Enemyable {
         return mSpecialAttackValue;
     }
 
+    public int lightAttackLength(){
+        return mLightAttacks.length;
+    }
+
+    public int heavyAttackLength(){
+        return mHeavyAttacks.length;
+    }
+
+    public int specialAttackLength(){
+        return mSpecialAttacks.length;
+    }
+
     //INTERFACE
 
     public String lightAttackOutput(int attackNumber){

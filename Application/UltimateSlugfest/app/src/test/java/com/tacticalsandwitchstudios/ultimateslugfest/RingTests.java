@@ -46,4 +46,19 @@ public class RingTests {
         assertNotNull(mRing.playerHasMissed());
     }
 
+    @Test
+    public void enemyHasHit__LightAttack(){
+        assertNotNull(mRing.enemyHasHit("Light Attack"));
+    }
+
+    @Test
+    public void enemyHasHit__HeavyAttack(){
+        assertNotNull(mRing.enemyHasHit("Heavy Attack"));
+    }
+
+    @Test
+    public void enemyHasHit__SpecialAttack(){
+        assertNotNull(mRing.enemyHasHit("Special Attack"));
+    }
+
 }

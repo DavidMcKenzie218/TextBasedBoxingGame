@@ -13,4 +13,8 @@ public interface Enemyable {
 
     void damageTaken(int damage);
 
+    int lightAttackLength();
+    int heavyAttackLength();
+    int specialAttackLength();
+
 }

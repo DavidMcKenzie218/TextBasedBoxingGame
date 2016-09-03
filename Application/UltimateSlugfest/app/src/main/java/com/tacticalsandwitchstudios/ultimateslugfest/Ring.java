@@ -19,6 +19,8 @@ public class Ring {
         return (int)(Math.random()*difficulty);
     }
 
+    //PLAYER
+
     public String playerHasHit(String attack){
        int  attackNumber = (int)(Math.random()*playerAttackLength(attack));
         return playerAttackOutput(attackNumber, attack);
@@ -37,7 +39,7 @@ public class Ring {
         } else if (attack == "Special Attack"){
             return mPlayer.specialAttackLength();
         }else{
-            return 0;
+            return -1;
         }
     }
 
@@ -50,6 +52,37 @@ public class Ring {
             return mPlayer.playerHasUsedSpecialAttack(attackNumber);
         }else{
             return "No Attack Selected";
+        }
+    }
+
+    //ENEMY
+
+    public String enemyHasHit(String attack){
+        int attackNumber = (int)(Math.random()*enemyAttackLength(attack));
+        return enemyAttackOutput(attackNumber, attack);
+    }
+
+    public int enemyAttackLength(String attack){
+        if (attack == "Light Attack"){
+            return mEnemy.lightAttackLength();
+        }else if (attack == "Heavy Attack"){
+            return mEnemy.heavyAttackLength();
+        }else if (attack == "Special Attack"){
+            return mEnemy.specialAttackLength();
+        }else{
+            return -1;
+        }
+    }
+
+    public String enemyAttackOutput(int attackNumber, String attack){
+        if (attack == "Light Attack"){
+            return mEnemy.lightAttackOutput(attackNumber);
+        }else if (attack == "Heavy Attack"){
+            return mEnemy.heavyAttackOutput(attackNumber);
+        }else if (attack == "Special Attack"){
+            return mEnemy.specialAttackOutput(attackNumber);
+        }else{
+            return "No attack selected";
         }
     }
 

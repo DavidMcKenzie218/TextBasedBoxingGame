@@ -36,6 +36,16 @@ public class Game {
         }
     }
 
+    //HEALTH
+
+    public String getPlayerHealth(){
+        return Integer.toString(mPlayer.getHealth());
+    }
+
+    public String getEnemyHealth(){
+        return Integer.toString(mEnemy.getHealth());
+    }
+
     //END GAME
 
 

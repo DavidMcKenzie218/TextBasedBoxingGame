@@ -31,7 +31,7 @@ public class Ring {
         if (hitOrMiss == 1){
             return enemyhasMissed();
         }else{
-            return playerHasHit(attack);
+            return enemyHasHit(attack);
         }
     }
 

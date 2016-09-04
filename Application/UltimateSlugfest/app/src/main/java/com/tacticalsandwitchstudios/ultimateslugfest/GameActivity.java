@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by user on 04/09/2016.
  */
@@ -29,25 +31,33 @@ public class GameActivity extends AppCompatActivity {
         mLightAttackButton = (Button)findViewById(R.id.light_attack);
         mPlayerOutputText = (TextView)findViewById(R.id.player_output);
         mEnemyOutPutText = (TextView)findViewById(R.id.enemy_output);
+        mPlayerHealth = (TextView)findViewById(R.id.player_health);
+        mEnemyHealth = (TextView)findViewById(R.id.enemy_health);
+
+        mGame.setupFight(0);
+
+        mPlayerHealth.setText(mGame.getPlayerHealth());
+        mEnemyHealth.setText(mGame.getEnemyHealth());
 
 
         playerAttack();
         }
 
     public void playerAttack() {
-        mGame.setupFight(0);
 
-                mLightAttackButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String attack = "Light Attack";
-                        String playerAttack = mGame.playerAttacksEnemy(attack);
-                        mPlayerOutputText.setText(playerAttack);
-                        String enemyAttack = mGame.enemyattacksPlayer();
-                        mEnemyOutPutText.setText(enemyAttack);
-                    }
-                });
-        }
+        mLightAttackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String attack = "Light Attack";
+                String playerAttack = mGame.playerAttacksEnemy(attack);
+                mPlayerOutputText.setText(playerAttack);
+                String enemyAttack = mGame.enemyattacksPlayer();
+                mEnemyOutPutText.setText(enemyAttack);
+                mPlayerHealth.setText(mGame.getPlayerHealth());
+                mEnemyHealth.setText(mGame.getEnemyHealth());
+            }
+        });
+    }
 
 
 

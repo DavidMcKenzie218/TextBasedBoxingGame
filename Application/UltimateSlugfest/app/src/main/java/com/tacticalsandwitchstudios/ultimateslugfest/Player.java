@@ -87,6 +87,10 @@ public class Player {
         return  mMiss[missNumber];
     }
 
+    public void damageTaken(int damage){
+        mHealth = mHealth - damage;
+    }
+
 
 
 }

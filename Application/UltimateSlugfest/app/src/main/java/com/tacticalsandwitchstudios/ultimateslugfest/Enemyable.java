@@ -6,6 +6,9 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
 public interface Enemyable {
 
     int getHealth();
+    int getLightAttackValue();
+    int getHeavyAttackValue();
+    int getSpecialAttackValue();
 
     String lightAttackOutput(int attackNumber);
     String heavyAttackOutput(int attackNumber);

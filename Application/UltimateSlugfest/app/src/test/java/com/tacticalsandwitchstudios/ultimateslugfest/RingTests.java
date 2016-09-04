@@ -80,4 +80,26 @@ public class RingTests {
         assertEquals(75, mBoneCrusher.getHealth());
     }
 
+
+    @Test
+    public void enemyDealtDamageToPlayer__LightAttack(){
+        mRing.enemyHasHit("Light Attack");
+        assertEquals(90, mPlayer.getHealth());
+    }
+
+
+    @Test
+    public void enemyDealtDamageToPlayer__HeavyAttack(){
+        mRing.enemyHasHit("Heavy Attack");
+        assertEquals(85, mPlayer.getHealth());
+    }
+
+
+    @Test
+    public void enemyDealtDamageToPlayer__SpecialAttack(){
+        mRing.enemyHasHit("Special Attack");
+        assertEquals(75, mPlayer.getHealth());
+    }
+
+
 }

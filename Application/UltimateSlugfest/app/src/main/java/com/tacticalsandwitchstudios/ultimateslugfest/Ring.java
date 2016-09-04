@@ -15,6 +15,9 @@ public class Ring {
         mEnemy = enemy;
     }
 
+
+    //METHOD FOR HIT OR MISS
+
     public int hitOrMiss(int difficulty){
         return (int)(Math.random()*difficulty);
     }
@@ -82,10 +85,16 @@ public class Ring {
 
     public String enemyAttackOutput(int attackNumber, String attack){
         if (attack == "Light Attack"){
+            int enemyDamage = mEnemy.getLightAttackValue();
+            mPlayer.damageTaken(enemyDamage);
             return mEnemy.lightAttackOutput(attackNumber);
         }else if (attack == "Heavy Attack"){
+            int enemyDamage = mEnemy.getHeavyAttackValue();
+            mPlayer.damageTaken(enemyDamage);
             return mEnemy.heavyAttackOutput(attackNumber);
         }else if (attack == "Special Attack"){
+            int enemyDamage = mEnemy.getSpecialAttackValue();
+            mPlayer.damageTaken(enemyDamage);
             return mEnemy.specialAttackOutput(attackNumber);
         }else{
             return "No attack selected";

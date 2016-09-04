@@ -14,18 +14,11 @@ public class Game {
         mPlayer = new Player("David");
     }
 
-    public void setupFight(){
-        if(mFightNumber == 0){
+    public void setupFight(int round){
+        if(mFightNumber == round){
             mEnemy = new HeavyweightBoxer();
         }
         mRing = new Ring(mPlayer, mEnemy);
-    }
-
-    public void gameTurn(String attack){
-        while (mPlayer.getHealth() < 0 && mEnemy.getHealth() < 0){
-           playerAttacksEnemy(attack);
-            enemyattacksPlayer();
-        }
     }
 
     public String playerAttacksEnemy(String attack){
@@ -39,10 +32,26 @@ public class Game {
         }else if (enemyAttack == 2){
             return mRing.enemyAttacks("Heavy Attack");
         }else{
-            return mRing.enemyAttacks("special Attack");
+            return mRing.enemyAttacks("Special Attack");
         }
     }
 
+    //END GAME
 
 
+    public boolean endGame(){
+        if (mPlayer.getHealth() == 0 || mEnemy.getHealth() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public String winner(){
+        if(mEnemy.getHealth() == 0){
+            return mPlayer.getName();
+        }else {
+            return mEnemy.getName();
+        }
+    }
 }

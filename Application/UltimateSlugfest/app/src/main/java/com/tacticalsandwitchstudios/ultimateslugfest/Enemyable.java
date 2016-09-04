@@ -22,4 +22,6 @@ public interface Enemyable {
     int heavyAttackLength();
     int specialAttackLength();
 
+    String getName();
+
 }

@@ -79,5 +79,9 @@ public class HeavyweightBoxer implements Enemyable {
 
     public void damageTaken(int damage){
         mHealth = mHealth - damage;
+        if (mHealth < 0){
+            mHealth = 0;
+        }
+
     }
 }

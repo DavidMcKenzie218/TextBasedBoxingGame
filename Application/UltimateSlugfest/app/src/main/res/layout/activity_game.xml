@@ -1,45 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/player_health"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:text=""
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/enemy_health"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:text=""
+        android:layout_alignRight="@id/player_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/player_name"
+        android:textSize="25sp"
+        android:text=""
+        android:layout_below="@id/player_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/enemy_name"
+        android:textSize="25sp"
+        android:text=""
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/enemy_health"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/player_output"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:text=""
-        android:gravity="center_horizontal"
+        android:layout_below="@+id/player_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/enemy_output"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:text=""
-        android:gravity="center_horizontal"
+        android:layout_below="@id/enemy_name"
+        android:layout_alignRight="@id/player_health"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/light_attack"
         android:text="@string/light_attack"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:layout_below="@+id/player_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/heavy_attack"
+        android:text="@string/heavy_attack"
+        android:textSize="25sp"
+        android:layout_below="@+id/player_output"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/special_attack"
+        android:text="@string/special_attack"
+        android:textSize="25sp"
+        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 
 
-</LinearLayout>
+
+</RelativeLayout>

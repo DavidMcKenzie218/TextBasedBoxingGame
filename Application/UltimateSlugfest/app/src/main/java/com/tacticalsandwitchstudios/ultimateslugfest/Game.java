@@ -46,11 +46,23 @@ public class Game {
         return Integer.toString(mEnemy.getHealth());
     }
 
+    //NAMES
+
+    public String getPlayerName(){
+        return mPlayer.getName();
+    }
+
+    public String getEnemyName(){
+        return mEnemy.getName();
+    }
+
     //END GAME
 
 
     public boolean endGame(){
-        if (mPlayer.getHealth() == 0 || mEnemy.getHealth() == 0){
+        if (mPlayer.getHealth() == 0 ){
+            return true;
+        }else if(mEnemy.getHealth() == 0){
             return true;
         }else{
             return false;

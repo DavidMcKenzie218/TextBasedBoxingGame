@@ -89,6 +89,9 @@ public class Player {
 
     public void damageTaken(int damage){
         mHealth = mHealth - damage;
+        if (mHealth < 0){
+            mHealth = 0;
+        }
     }
 
 

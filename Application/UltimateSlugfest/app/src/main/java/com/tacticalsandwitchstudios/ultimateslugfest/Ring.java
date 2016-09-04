@@ -73,7 +73,7 @@ public class Ring {
         }else if (attack == "Heavy Attack"){
             int playerDamage = mPlayer.getHeavyAttackValue();
             mEnemy.damageTaken(playerDamage);
-            return mPlayer.playerHasUsedLightAttack(attackNumber);
+            return mPlayer.playerHasUsedHeavyAttack(attackNumber);
         } else if (attack == "Special Attack"){
             int playerDamage = mPlayer.getSpecialAttackValue();
             mEnemy.damageTaken(playerDamage);

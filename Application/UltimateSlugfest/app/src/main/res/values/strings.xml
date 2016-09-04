@@ -2,4 +2,6 @@
     <string name="app_name">UltimateSlugfest</string>
     <string name="light_attack">Light Attack</string>
     <string name="test">Its Alive</string>
+    <string name="heavy_attack">Heavy Attack</string>
+    <string name="special_attack">Special Attack</string>
 </resources>

@@ -15,6 +15,25 @@ public class Ring {
         mEnemy = enemy;
     }
 
+    //TURN METHODS
+
+    public String playerAttacks(String attack){
+        int hitOrMiss =hitOrMiss(5);
+        if (hitOrMiss == 1){
+            return playerHasMissed();
+        }else {
+            return playerHasHit(attack);
+        }
+    }
+
+    public String enemyAttacks(String attack){
+        int hitOrMiss = hitOrMiss(5);
+        if (hitOrMiss == 1){
+            return enemyhasMissed();
+        }else{
+            return playerHasHit(attack);
+        }
+    }
 
     //METHOD FOR HIT OR MISS
 
@@ -99,6 +118,11 @@ public class Ring {
         }else{
             return "No attack selected";
         }
+    }
+
+    public String enemyhasMissed(){
+        int missNumber = (int)(Math.random()*mEnemy.missLength());
+        return mEnemy.enemyHasMissed(missNumber);
     }
 
 }

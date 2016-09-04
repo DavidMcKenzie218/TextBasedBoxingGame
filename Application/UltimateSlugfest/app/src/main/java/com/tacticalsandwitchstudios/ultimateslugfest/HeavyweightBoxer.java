@@ -55,6 +55,10 @@ public class HeavyweightBoxer implements Enemyable {
         return mSpecialAttacks.length;
     }
 
+    public int missLength(){
+        return mMiss.length;
+    }
+
     //INTERFACE
 
     public String lightAttackOutput(int attackNumber){
@@ -67,6 +71,10 @@ public class HeavyweightBoxer implements Enemyable {
 
     public String specialAttackOutput(int attackNumber){
         return mSpecialAttacks[attackNumber];
+    }
+
+    public String enemyHasMissed(int missNumber){
+        return mMiss[missNumber];
     }
 
     public void damageTaken(int damage){

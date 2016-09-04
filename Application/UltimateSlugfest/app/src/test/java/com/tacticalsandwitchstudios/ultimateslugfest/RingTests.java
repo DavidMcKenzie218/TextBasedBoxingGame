@@ -3,6 +3,7 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 
 /**
@@ -59,6 +60,24 @@ public class RingTests {
     @Test
     public void enemyHasHit__SpecialAttack(){
         assertNotNull(mRing.enemyHasHit("Special Attack"));
+    }
+
+    @Test
+    public void playerHasDealtDamageToEnemy__Light(){
+        mRing.playerHasHit("Light Attack");
+        assertEquals(90, mBoneCrusher.getHealth());
+    }
+
+    @Test
+    public void playerHasDealtDamageToEnemy__Heavy(){
+        mRing.playerHasHit("Heavy Attack");
+        assertEquals(85, mBoneCrusher.getHealth());
+    }
+
+    @Test
+    public void playerHasDealtDamageToEnemy__Special(){
+        mRing.playerHasHit("Special Attack");
+        assertEquals(75, mBoneCrusher.getHealth());
     }
 
 }

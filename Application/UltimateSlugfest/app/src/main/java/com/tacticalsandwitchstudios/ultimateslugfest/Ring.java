@@ -45,10 +45,16 @@ public class Ring {
 
     public String playerAttackOutput(int attackNumber, String attack){
         if (attack == "Light Attack"){
+            int playerDamage = mPlayer.getLightAttackValue();
+            mEnemy.damageTaken(playerDamage);
             return mPlayer.playerHasUsedLightAttack(attackNumber);
         }else if (attack == "Heavy Attack"){
+            int playerDamage = mPlayer.getHeavyAttackValue();
+            mEnemy.damageTaken(playerDamage);
             return mPlayer.playerHasUsedLightAttack(attackNumber);
         } else if (attack == "Special Attack"){
+            int playerDamage = mPlayer.getSpecialAttackValue();
+            mEnemy.damageTaken(playerDamage);
             return mPlayer.playerHasUsedSpecialAttack(attackNumber);
         }else{
             return "No Attack Selected";

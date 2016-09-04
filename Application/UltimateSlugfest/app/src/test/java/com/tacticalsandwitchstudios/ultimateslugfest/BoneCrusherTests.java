@@ -28,6 +28,12 @@ public class BoneCrusherTests {
     }
 
     @Test
+    public void boneCrusherHasTakenDamage(){
+        boneCrusher.damageTaken(10);
+        assertEquals(90, boneCrusher.getHealth());
+    }
+
+    @Test
     public void boneCrusherLightAttackValue(){
         assertEquals(10, boneCrusher.getLightAttackValue());
     }

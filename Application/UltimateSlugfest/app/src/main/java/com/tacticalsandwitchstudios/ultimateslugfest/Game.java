@@ -15,8 +15,10 @@ public class Game {
     }
 
     public void setupFight(int round){
-        if(mFightNumber == round){
+        if(round == 0){
             mEnemy = new HeavyweightBoxer();
+        }else if(round == 1){
+            mEnemy = new FirstCreature();
         }
         mRing = new Ring(mPlayer, mEnemy);
     }

@@ -144,7 +144,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void nextRound(){
-        if (mRound == 1){       //HardCoded for the amount of enemies
+        if (mRound == 2){       //HardCoded for the amount of enemies
             Intent intent = new Intent(GameActivity.this, CompletedActivity.class);
             startActivity(intent);
         }else{

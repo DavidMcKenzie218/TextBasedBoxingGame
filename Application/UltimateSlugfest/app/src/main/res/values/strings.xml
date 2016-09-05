@@ -7,4 +7,6 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="start_game">Start Game</string>
+    <string name="restart_game">Restart Game?</string>
+    <string name="completed_message">Well Done On Completing the Game</string>
 </resources>

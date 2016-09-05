@@ -125,11 +125,13 @@ public class GameActivity extends AppCompatActivity {
 
     public void endGame(){
         if (mGame.endGame()){
-            mRound ++;
-            String roundToSave = Integer.toString(mRound);
-            SavedTextPrefrences.setStoredText(GameActivity.this, roundToSave);
-            Intent intent = new Intent(GameActivity.this, IntermissionActivity.class);
-            startActivity(intent);
+            if(mGame.getPlayerHealth() == "0") {
+                Intent intent = new Intent(GameActivity.this, GameActivity.class);
+                startActivity(intent);
+            }else {
+                mRound++;
+                nextRound();
+            }
         }
     }
 
@@ -138,6 +140,18 @@ public class GameActivity extends AppCompatActivity {
             mRound = 0;
         }else {
             mRound = Integer.parseInt(SavedTextPrefrences.getStoredText(this));
+        }
+    }
+
+    public void nextRound(){
+        if (mRound == 1){       //HardCoded for the amount of enemies
+            Intent intent = new Intent(GameActivity.this, CompletedActivity.class);
+            startActivity(intent);
+        }else{
+            String roundToSave = Integer.toString(mRound);
+            SavedTextPrefrences.setStoredText(GameActivity.this, roundToSave);
+            Intent intent = new Intent(GameActivity.this, IntermissionActivity.class);
+            startActivity(intent);
         }
     }
 

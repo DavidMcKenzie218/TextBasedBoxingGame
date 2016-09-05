@@ -22,6 +22,8 @@
             android:name=".IntermissionActivity">
 
         </activity>
+        <activity
+            android:name=".CompletedActivity"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.tacticalsandwitchstudios.ultimateslugfest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -40,7 +41,6 @@ public class IntermissionActivity extends AppCompatActivity{
 
     public void intermission(){
         mSalesPitch.setText(mIntermission.salesOutput());
-
         mPlayerHasPurchesedPowerUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,6 +48,7 @@ public class IntermissionActivity extends AppCompatActivity{
                 mPlayer.playerHasPurchasedPowerUp(powerUpValue);
                 String boughtOutput = mIntermission.boughtOutput();
                 mPlayerOutput.setText(boughtOutput);
+                nextFight();
             }
         });
 
@@ -56,7 +57,13 @@ public class IntermissionActivity extends AppCompatActivity{
             public void onClick(View view) {
                 String refusedOutput = mIntermission.refusedOutput();
                 mPlayerOutput.setText(refusedOutput);
+                nextFight();
             }
         });
+    }
+
+    public void nextFight(){
+        Intent intent = new Intent(IntermissionActivity.this, GameActivity.class);
+        startActivity(intent);
     }
 }

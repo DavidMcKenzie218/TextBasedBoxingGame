@@ -7,6 +7,7 @@ public class Intermission {
 
     String[] mBought = {"Bought"};
     String[] mPassed = {"Passed"};
+    int mPowerUpRoids = 10;
 
     public String getBoughtOutput(int boughtNumber){
         return mBought[boughtNumber];
@@ -14,6 +15,18 @@ public class Intermission {
 
     public String getPassedOutput(int passedNumber){
         return mPassed[passedNumber];
+    }
+
+    public int getBoughtLength(){
+        return mBought.length;
+    }
+
+    public int getPassedLength(){
+        return mPassed.length;
+    }
+
+    public int getPowerUpRoidsValue(){
+        return mPowerUpRoids;
     }
 
 }

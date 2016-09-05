@@ -27,5 +27,19 @@ public class IntermissionTests {
         assertEquals("Passed", intermission.getPassedOutput(0));
     }
 
+    @Test
+    public void boughtArrayHasLength(){
+        assertEquals(1, intermission.getBoughtLength());
+    }
+
+    @Test
+    public void passedArrayHasLength(){
+        assertEquals(1, intermission.getPassedLength());
+    }
+
+    @Test
+    public void powerUpHasValue(){
+        assertEquals(10, intermission.getPowerUpRoidsValue());
+    }
 
 }

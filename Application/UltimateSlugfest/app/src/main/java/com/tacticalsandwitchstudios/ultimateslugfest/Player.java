@@ -10,11 +10,11 @@ import static java.lang.Math.random;
 public class Player {
 
     private String mName;
-    private int mHealth = 100;
-    private int mLightAttackValue = 10;
-    private int mHeavyAttackValue = 15;
-    private int mSpecialAttackValue = 25;
-    private boolean mPowerUpAvalible = false;
+    private int mHealth = 150;
+    private int mLightAttackValue;
+    private int mHeavyAttackValue;
+    private int mSpecialAttackValue;
+    private boolean mPowerUpAvalible;
 
     private String[] mLightAttacks = {"Light Punch"};
     private String[] mHeavyAttacks = {"Heavy Punch"};
@@ -25,6 +25,10 @@ public class Player {
 
     public Player(String name){
         mName = name;
+        mLightAttackValue = 5;
+        mHeavyAttackValue = 10;
+        mSpecialAttackValue = 20;
+        mPowerUpAvalible = false;
     }
 
     public String getName(){

@@ -25,22 +25,22 @@ public class PlayerUnitTests {
 
     @Test
     public void playerHasHealth(){
-        assertEquals(100, player.getHealth());
+        assertEquals(150, player.getHealth());
     }
 
     @Test
     public void playerHasLightAttackValue(){
-        assertEquals(10, player.getLightAttackValue());
+        assertEquals(5, player.getLightAttackValue());
     }
 
     @Test
     public void playerHasHeavyAttackValue(){
-        assertEquals(15, player.getHeavyAttackValue());
+        assertEquals(10, player.getHeavyAttackValue());
     }
 
     @Test
     public void playerHasSpecialAttackValue(){
-        assertEquals(25, player.getSpecialAttackValue());
+        assertEquals(20, player.getSpecialAttackValue());
     }
 
     @Test

@@ -24,28 +24,28 @@ public class BoneCrusherTests {
 
     @Test
     public void boneCrusherHasHealth(){
-        assertEquals(100, boneCrusher.getHealth());
+        assertEquals(150, boneCrusher.getHealth());
     }
 
     @Test
     public void boneCrusherHasTakenDamage(){
         boneCrusher.damageTaken(10);
-        assertEquals(90, boneCrusher.getHealth());
+        assertEquals(140, boneCrusher.getHealth());
     }
 
     @Test
     public void boneCrusherLightAttackValue(){
-        assertEquals(10, boneCrusher.getLightAttackValue());
+        assertEquals(5, boneCrusher.getLightAttackValue());
     }
 
     @Test
     public void boneCrusherHeavyAttackValue(){
-        assertEquals(15, boneCrusher.getHeavyAttackValue());
+        assertEquals(10, boneCrusher.getHeavyAttackValue());
     }
 
     @Test
     public void boneCrusherSpecialAttackValue(){
-        assertEquals(25, boneCrusher.getSpecialAttackValue());
+        assertEquals(20, boneCrusher.getSpecialAttackValue());
     }
 
     @Test

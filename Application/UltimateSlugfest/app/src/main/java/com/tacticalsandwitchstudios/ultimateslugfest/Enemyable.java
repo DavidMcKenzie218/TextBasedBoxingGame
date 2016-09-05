@@ -24,4 +24,7 @@ public interface Enemyable {
 
     String getName();
 
+    int getAttackRate();
+    int getMissRate();
+
 }

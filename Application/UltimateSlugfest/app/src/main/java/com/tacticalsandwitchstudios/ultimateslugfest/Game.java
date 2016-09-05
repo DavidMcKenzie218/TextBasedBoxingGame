@@ -25,14 +25,14 @@ public class Game {
         return mRing.playerAttacks(attack);
     }
 
-    public String enemyattacksPlayer(){
-        int enemyAttack = (int)(Math.random()*5);
+    public String enemyattacksPlayer(int enemyAttackRate, int enemyMissRate){
+        int enemyAttack = (int)(Math.random()*enemyAttackRate);
         if (enemyAttack == 1){
-            return mRing.enemyAttacks("Special Attack");
+            return mRing.enemyAttacks("Special Attack", enemyMissRate);
         }else if (enemyAttack == 2){
-            return mRing.enemyAttacks("Heavy Attack");
+            return mRing.enemyAttacks("Heavy Attack", enemyMissRate);
         }else{
-            return mRing.enemyAttacks("Light Attack");
+            return mRing.enemyAttacks("Light Attack", enemyMissRate);
         }
     }
 
@@ -54,6 +54,16 @@ public class Game {
 
     public String getEnemyName(){
         return mEnemy.getName();
+    }
+
+    //STATS FOR ENEMIES
+
+    public int getEnemyAttackRate(){
+        return mEnemy.getAttackRate();
+    }
+
+    public int getEnemyMissRate(){
+        return mEnemy.getMissRate();
     }
 
     //END GAME

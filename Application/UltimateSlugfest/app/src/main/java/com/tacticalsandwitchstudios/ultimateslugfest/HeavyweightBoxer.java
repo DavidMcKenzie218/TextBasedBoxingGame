@@ -10,6 +10,8 @@ public class HeavyweightBoxer implements Enemyable {
     private int mLightAttackValue;
     private int mHeavyAttackValue;
     private int mSpecialAttackValue;
+    private int mMissRate;
+    private int mAttackRate;
 
     private String[] mLightAttacks = {"Light Punch"};
     private String[] mHeavyAttacks = {"Heavy Punch"};
@@ -21,6 +23,8 @@ public class HeavyweightBoxer implements Enemyable {
         mLightAttackValue = 5;
         mHeavyAttackValue = 10;
         mSpecialAttackValue = 20;
+        mAttackRate = 7;
+        mMissRate = 2;
     }
 
     //GETTERS
@@ -59,6 +63,14 @@ public class HeavyweightBoxer implements Enemyable {
 
     public int missLength(){
         return mMiss.length;
+    }
+
+    public int getAttackRate(){
+        return mAttackRate;
+    }
+
+    public int getMissRate(){
+        return mMissRate;
     }
 
     //INTERFACE

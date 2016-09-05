@@ -84,10 +84,7 @@ public class GameActivity extends AppCompatActivity {
                 String attack = "Light Attack";
                 String playerAttack = mGame.playerAttacksEnemy(attack);
                 mPlayerOutputText.setText(playerAttack);
-                String enemyAttack = mGame.enemyattacksPlayer();
-                mEnemyOutPutText.setText(enemyAttack);
-                mPlayerHealth.setText(mGame.getPlayerHealth());
-                mEnemyHealth.setText(mGame.getEnemyHealth());
+                enemyAttack();
                 endGame();
             }
         });
@@ -98,10 +95,7 @@ public class GameActivity extends AppCompatActivity {
                 String attack = "Heavy Attack";
                 String playerAttack = mGame.playerAttacksEnemy(attack);
                 mPlayerOutputText.setText(playerAttack);
-                String enemyAttack = mGame.enemyattacksPlayer();
-                mEnemyOutPutText.setText(enemyAttack);
-                mPlayerHealth.setText(mGame.getPlayerHealth());
-                mEnemyHealth.setText(mGame.getEnemyHealth());
+                enemyAttack();
                 endGame();
             }
         });
@@ -112,15 +106,21 @@ public class GameActivity extends AppCompatActivity {
                 String attack = "Special Attack";
                 String playerAttack = mGame.playerAttacksEnemy(attack);
                 mPlayerOutputText.setText(playerAttack);
-                String enemyAttack = mGame.enemyattacksPlayer();
-                mEnemyOutPutText.setText(enemyAttack);
-                mPlayerHealth.setText(mGame.getPlayerHealth());
-                mEnemyHealth.setText(mGame.getEnemyHealth());
+                enemyAttack();
                 endGame();
             }
         });
 
 
+    }
+
+    public void enemyAttack(){
+        int enemyAttackRate = mGame.getEnemyAttackRate();
+        int enemyMissRate = mGame.getEnemyMissRate();
+        String enemyAttack = mGame.enemyattacksPlayer(enemyAttackRate, enemyMissRate);
+        mEnemyOutPutText.setText(enemyAttack);
+        mPlayerHealth.setText(mGame.getPlayerHealth());
+        mEnemyHealth.setText(mGame.getEnemyHealth());
     }
 
     public void endGame(){

@@ -15,6 +15,7 @@ public class Player {
     private int mHeavyAttackValue;
     private int mSpecialAttackValue;
     private boolean mPowerUpAvalible;
+    private int mPowerUpValue;
 
     private String[] mLightAttacks = {"Light Punch"};
     private String[] mHeavyAttacks = {"Heavy Punch"};
@@ -23,81 +24,89 @@ public class Player {
 
     //GETTERS
 
-    public Player(String name){
+    public Player(String name) {
         mName = name;
         mLightAttackValue = 5;
         mHeavyAttackValue = 10;
         mSpecialAttackValue = 20;
         mPowerUpAvalible = false;
+        mPowerUpValue = 0;
     }
 
-    public String getName(){
+    public String getName() {
         return mName;
     }
 
-    public int getHealth(){
+    public int getHealth() {
         return mHealth;
     }
 
-    public int getLightAttackValue(){
+    public int getLightAttackValue() {
         return mLightAttackValue;
     }
 
-    public int getHeavyAttackValue(){
+    public int getHeavyAttackValue() {
         return mHeavyAttackValue;
     }
 
-    public int getSpecialAttackValue(){
+    public int getSpecialAttackValue() {
         return mSpecialAttackValue;
     }
 
-    public boolean hasThePlayerGotPowerUp(){
+    public boolean hasThePlayerGotPowerUp() {
         return mPowerUpAvalible;
+    }
+
+    public int getPowerUpValue(){
+        return mPowerUpValue;
     }
 
     //ARRAY LENGTHS
 
-    public int lightAttackLenght(){
+    public int lightAttackLenght() {
         return mLightAttacks.length;
     }
 
-    public int heavyAttackLength(){
+    public int heavyAttackLength() {
         return mHeavyAttacks.length;
     }
 
-    public int specialAttackLength(){
+    public int specialAttackLength() {
         return mSpecialAttacks.length;
     }
 
-    public int missLength(){
+    public int missLength() {
         return mMiss.length;
     }
 
     //ATTACKS__OUTPUT
 
-    public String playerHasUsedLightAttack(int attackNumber){
+    public String playerHasUsedLightAttack(int attackNumber) {
         return mLightAttacks[attackNumber];
     }
 
-    public String playerHasUsedHeavyAttack(int attackNumber){
+    public String playerHasUsedHeavyAttack(int attackNumber) {
         return mHeavyAttacks[attackNumber];
     }
 
-    public String playerHasUsedSpecialAttack(int attackNumber){
+    public String playerHasUsedSpecialAttack(int attackNumber) {
         return mSpecialAttacks[attackNumber];
     }
 
-    public String playerHasMissed(int missNumber){
-        return  mMiss[missNumber];
+    public String playerHasMissed(int missNumber) {
+        return mMiss[missNumber];
     }
 
-    public void damageTaken(int damage){
+    public void damageTaken(int damage) {
         mHealth = mHealth - damage;
-        if (mHealth < 0){
+        if (mHealth < 0) {
             mHealth = 0;
         }
     }
 
-
+    public void playerHasPurchasedPowerUp(int powerUpValue){
+        mPowerUpAvalible = true;
+        mPowerUpValue = powerUpValue;
+    }
 
 }

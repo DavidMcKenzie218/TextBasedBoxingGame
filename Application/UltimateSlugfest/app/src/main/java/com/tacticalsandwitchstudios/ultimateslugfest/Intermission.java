@@ -7,6 +7,7 @@ public class Intermission {
 
     String[] mBought = {"Bought"};
     String[] mPassed = {"Passed"};
+    String[] mSalesPitches = {"Want to buy a Power Up?"};
     int mPowerUpRoids = 10;
 
     public String getBoughtOutput(int boughtNumber){
@@ -15,6 +16,10 @@ public class Intermission {
 
     public String getPassedOutput(int passedNumber){
         return mPassed[passedNumber];
+    }
+    
+    public String getSalesPitch(int salesNumber){
+        return mSalesPitches[salesNumber];
     }
 
     public int getBoughtLength(){

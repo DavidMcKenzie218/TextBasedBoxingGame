@@ -28,6 +28,11 @@ public class IntermissionTests {
     }
 
     @Test
+    public void outputForSalesPitch(){
+        assertEquals("Want to buy a Power Up?", intermission.getSalesPitch(0));
+    }
+
+    @Test
     public void boughtArrayHasLength(){
         assertEquals(1, intermission.getBoughtLength());
     }

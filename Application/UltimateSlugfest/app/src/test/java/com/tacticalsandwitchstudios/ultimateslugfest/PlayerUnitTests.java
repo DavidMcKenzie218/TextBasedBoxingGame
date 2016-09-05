@@ -68,4 +68,11 @@ public class PlayerUnitTests {
         assertEquals("Miss", player.playerHasMissed(0));
     }
 
+    @Test
+    public void playerHasPurchasesPowerUp(){
+        player.playerHasPurchasedPowerUp(10);
+        assertEquals(true, player.hasThePlayerGotPowerUp());
+        assertEquals(10, player.getPowerUpValue());
+    }
+
 }

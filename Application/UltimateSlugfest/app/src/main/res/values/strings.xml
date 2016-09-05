@@ -4,4 +4,6 @@
     <string name="test">Its Alive</string>
     <string name="heavy_attack">Heavy Attack</string>
     <string name="special_attack">Special Attack</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

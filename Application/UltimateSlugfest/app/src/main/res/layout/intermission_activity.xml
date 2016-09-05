@@ -2,4 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/want_to_power_up"
+        android:text=""
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bought_power_up"
+        android:text="@string/yes"
+        android:textSize="25sp"
+        android:layout_below="@id/want_to_power_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/refused_power_up"
+        android:text="@string/no"
+        android:textSize="25sp"
+        android:layout_below="@id/want_to_power_up"
+        android:layout_toRightOf="@id/bought_power_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/player_choice_output"
+        android:text=""
+        android:textSize="25sp"
+        android:layout_below="@id/bought_power_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>

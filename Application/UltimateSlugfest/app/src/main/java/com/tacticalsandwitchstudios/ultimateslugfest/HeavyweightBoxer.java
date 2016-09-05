@@ -3,15 +3,9 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
 /**
  * Created by user on 03/09/2016.
  */
-public class HeavyweightBoxer implements Enemyable {
+public class HeavyweightBoxer extends Enemy {
 
-    String mName = "BoneCrusher";
-    private int mHealth = 150;
-    private int mLightAttackValue;
-    private int mHeavyAttackValue;
-    private int mSpecialAttackValue;
-    private int mMissRate;
-    private int mAttackRate;
+
 
     private String[] mLightAttacks = {"Light Punch"};
     private String[] mHeavyAttacks = {"Heavy Punch"};
@@ -25,28 +19,8 @@ public class HeavyweightBoxer implements Enemyable {
         mSpecialAttackValue = 20;
         mAttackRate = 7;
         mMissRate = 2;
-    }
-
-    //GETTERS
-
-    public String getName(){
-        return mName;
-    }
-
-    public int getHealth(){
-        return mHealth;
-    }
-
-    public int getLightAttackValue(){
-        return mLightAttackValue;
-    }
-
-    public int getHeavyAttackValue(){
-        return mHeavyAttackValue;
-    }
-
-    public int getSpecialAttackValue(){
-        return mSpecialAttackValue;
+        mHealth = 150;
+        mName = "BoneCrusher";
     }
 
     public int lightAttackLength(){
@@ -65,16 +39,6 @@ public class HeavyweightBoxer implements Enemyable {
         return mMiss.length;
     }
 
-    public int getAttackRate(){
-        return mAttackRate;
-    }
-
-    public int getMissRate(){
-        return mMissRate;
-    }
-
-    //INTERFACE
-
     public String lightAttackOutput(int attackNumber){
         return mLightAttacks[attackNumber];
     }
@@ -91,11 +55,5 @@ public class HeavyweightBoxer implements Enemyable {
         return mMiss[missNumber];
     }
 
-    public void damageTaken(int damage){
-        mHealth = mHealth - damage;
-        if (mHealth < 0){
-            mHealth = 0;
-        }
 
-    }
 }

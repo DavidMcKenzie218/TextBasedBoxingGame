@@ -26,13 +26,13 @@ public class Game {
     }
 
     public String enemyattacksPlayer(){
-        int enemyAttack = (int)(Math.random()*3);
+        int enemyAttack = (int)(Math.random()*5);
         if (enemyAttack == 1){
-            return mRing.enemyAttacks("Light Attack");
+            return mRing.enemyAttacks("Special Attack");
         }else if (enemyAttack == 2){
             return mRing.enemyAttacks("Heavy Attack");
         }else{
-            return mRing.enemyAttacks("Special Attack");
+            return mRing.enemyAttacks("Light Attack");
         }
     }
 

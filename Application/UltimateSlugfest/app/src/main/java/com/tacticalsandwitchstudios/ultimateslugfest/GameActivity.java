@@ -59,8 +59,8 @@ public class GameActivity extends AppCompatActivity {
         mEnemyname = (TextView)findViewById(R.id.enemy_name);
         mRoundNumber = (TextView)findViewById(R.id.round_number);
 
-        String round = Integer.toString(mRound);
-        mRoundNumber.setText(round);
+        String round = Integer.toString(mRound+1);
+        mRoundNumber.setText("Round "+round);
 
         mGame.setupFight(mRound);
 

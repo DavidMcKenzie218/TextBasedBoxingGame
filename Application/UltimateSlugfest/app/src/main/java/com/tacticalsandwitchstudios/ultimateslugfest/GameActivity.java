@@ -1,5 +1,6 @@
 package com.tacticalsandwitchstudios.ultimateslugfest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -27,9 +28,11 @@ public class GameActivity extends AppCompatActivity {
     TextView mEnemyHealth;
     TextView mPlayerName;
     TextView mEnemyname;
+    TextView mRoundNumber;
 
     Game mGame;
     int mWhosTurn;
+    int mRound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -39,6 +42,8 @@ public class GameActivity extends AppCompatActivity {
 
         mGame = new Game();
         mWhosTurn = 0;
+
+        whatRound();
 
         mLightAttackButton = (Button)findViewById(R.id.light_attack);
         mHeavyAttackButton = (Button)findViewById(R.id.heavy_attack);
@@ -50,8 +55,13 @@ public class GameActivity extends AppCompatActivity {
         mEnemyHealth = (TextView)findViewById(R.id.enemy_health);
         mPlayerName = (TextView)findViewById(R.id.player_name);
         mEnemyname = (TextView)findViewById(R.id.enemy_name);
+        mRoundNumber = (TextView)findViewById(R.id.round_number);
 
-        mGame.setupFight(0);
+        String round = Integer.toString(mRound);
+        mRoundNumber.setText(round);
+
+        mGame.setupFight(mRound);
+
 
         mPlayerHealth.setText(mGame.getPlayerHealth());
         mEnemyHealth.setText(mGame.getEnemyHealth());
@@ -113,13 +123,20 @@ public class GameActivity extends AppCompatActivity {
 
     public void endGame(){
         if (mGame.endGame()){
+            mRound ++;
+            String roundToSave = Integer.toString(mRound);
+            SavedTextPrefrences.setStoredText(GameActivity.this, roundToSave);
             Intent intent = new Intent(GameActivity.this, IntermissionActivity.class);
             startActivity(intent);
         }
     }
 
-
-
-
+    public void whatRound(){
+        if (SavedTextPrefrences.getStoredText(this) == null){
+            mRound = 0;
+        }else {
+            mRound = Integer.parseInt(SavedTextPrefrences.getStoredText(this));
+        }
+    }
 
 }

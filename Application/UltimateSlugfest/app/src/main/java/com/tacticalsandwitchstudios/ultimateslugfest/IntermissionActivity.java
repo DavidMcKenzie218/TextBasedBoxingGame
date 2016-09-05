@@ -23,7 +23,7 @@ public class IntermissionActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.intermission_activity);
+        setContentView(R.layout.activity_intermission);
 
         mPlayerHasPurchesedPowerUp =
                 (Button)findViewById(R.id.bought_power_up);

@@ -9,7 +9,7 @@ import android.preference.PreferenceManager;
  */
 public class SavedTextPrefrences {
 
-    private static final String PREF_SAVEDTEXT = "savedText";
+    private static final String PREF_SAVEDTEXT = "roundNumber";
 
     public static void setStoredText(Context context, String text){
         SharedPreferences sharedPreferences =
@@ -25,6 +25,15 @@ public class SavedTextPrefrences {
                 PreferenceManager.getDefaultSharedPreferences(context);
         String text = sharedPreferences.getString(PREF_SAVEDTEXT, null);
         return text;
+    }
+
+    public static void removeStoredText(Context context){
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(context);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(PREF_SAVEDTEXT, null);
+        editor.apply();
     }
 
 }

@@ -34,6 +34,8 @@ public class GameActivity extends AppCompatActivity {
     int mWhosTurn;
     int mRound;
 
+    private static Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -138,5 +140,6 @@ public class GameActivity extends AppCompatActivity {
             mRound = Integer.parseInt(SavedTextPrefrences.getStoredText(this));
         }
     }
+
 
 }

@@ -5,13 +5,13 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
  */
 public abstract class Enemy implements Enemyable{
 
-    String mName;
-    private int mHealth;
-    private int mLightAttackValue;
-    private int mHeavyAttackValue;
-    private int mSpecialAttackValue;
-    private int mMissRate;
-    private int mAttackRate;
+    protected String mName;
+    protected int mHealth;
+    protected int mLightAttackValue;
+    protected int mHeavyAttackValue;
+    protected int mSpecialAttackValue;
+    protected int mMissRate;
+    protected int mAttackRate;
 
     public Enemy(){
 
@@ -53,6 +53,8 @@ public abstract class Enemy implements Enemyable{
         if (mHealth < 0){
             mHealth = 0;
         }
+
+
 
     }
 }

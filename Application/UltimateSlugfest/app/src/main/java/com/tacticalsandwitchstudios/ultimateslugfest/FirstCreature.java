@@ -3,15 +3,7 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
 /**
  * Created by user on 05/09/2016.
  */
-public class FirstCreature implements Enemyable {
-
-    String mName = "Boris";
-    private int mHealth = 220;
-    private int mLightAttackValue;
-    private int mHeavyAttackValue;
-    private int mSpecialAttackValue;
-    private int mMissRate;
-    private int mAttackRate;
+public class FirstCreature extends Enemy {
 
     private String[] mLightAttacks = {"Light Punch"};
     private String[] mHeavyAttacks = {"Heavy Punch"};
@@ -25,28 +17,8 @@ public class FirstCreature implements Enemyable {
         mSpecialAttackValue = 20;
         mAttackRate = 10;
         mMissRate = 4;
-    }
-
-    //GETTERS
-
-    public String getName(){
-        return mName;
-    }
-
-    public int getHealth(){
-        return mHealth;
-    }
-
-    public int getLightAttackValue(){
-        return mLightAttackValue;
-    }
-
-    public int getHeavyAttackValue(){
-        return mHeavyAttackValue;
-    }
-
-    public int getSpecialAttackValue(){
-        return mSpecialAttackValue;
+        mName = "Boris";
+        mHealth = 220;
     }
 
     public int lightAttackLength(){
@@ -65,16 +37,6 @@ public class FirstCreature implements Enemyable {
         return mMiss.length;
     }
 
-    public int getAttackRate(){
-        return mAttackRate;
-    }
-
-    public int getMissRate(){
-        return mMissRate;
-    }
-
-    //INTERFACE
-
     public String lightAttackOutput(int attackNumber){
         return mLightAttacks[attackNumber];
     }
@@ -89,14 +51,6 @@ public class FirstCreature implements Enemyable {
 
     public String enemyHasMissed(int missNumber){
         return mMiss[missNumber];
-    }
-
-    public void damageTaken(int damage){
-        mHealth = mHealth - damage;
-        if (mHealth < 0){
-            mHealth = 0;
-        }
-
     }
     
 }

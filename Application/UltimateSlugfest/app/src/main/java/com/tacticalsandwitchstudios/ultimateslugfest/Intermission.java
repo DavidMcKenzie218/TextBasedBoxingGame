@@ -10,6 +10,8 @@ public class Intermission {
     String[] mSalesPitches = {"Want to buy a Power Up?"};
     int mPowerUpRoids = 10;
 
+    //GETTERS
+
     public String getBoughtOutput(int boughtNumber){
         return mBought[boughtNumber];
     }
@@ -32,6 +34,27 @@ public class Intermission {
 
     public int getPowerUpRoidsValue(){
         return mPowerUpRoids;
+    }
+
+    public int getSalesPitchLength() {
+        return mSalesPitches.length;
+    }
+
+    //LOGIC
+
+    public String salesOutput(){
+        int randomOutput = (int)(Math.random()*getSalesPitchLength());
+        return getSalesPitch(randomOutput);
+    }
+
+    public String boughtOutput(){
+        int randomOutput = (int)(Math.random()*getBoughtLength());
+        return getBoughtOutput(randomOutput);
+    }
+
+    public String refusedOutput(){
+        int randomOutput = (int)(Math.random()*getPassedLength());
+        return getPassedOutput(randomOutput);
     }
 
 }

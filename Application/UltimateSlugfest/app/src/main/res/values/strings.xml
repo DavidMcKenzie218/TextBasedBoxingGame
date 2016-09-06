@@ -13,4 +13,5 @@
     <string name="powerUp">Power Up</string>
     <string name="cheating_is_wrong">You have been caught cheating</string>
     <string name="punishment">You have been disqualified.</string>
+    <string name="unavalible">That Attack is Unavailable</string>
 </resources>

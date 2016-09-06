@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -32,8 +33,9 @@ public class GameActivity extends AppCompatActivity {
     TextView mRoundNumber;
 
     Game mGame;
-    int mWhosTurn;
     int mRound;
+    int mBalancingCounter;
+    boolean mSpecialAttackUsed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -42,7 +44,6 @@ public class GameActivity extends AppCompatActivity {
 
 
         mGame = new Game();
-        mWhosTurn = 0;
 
         whatRound();
 
@@ -63,6 +64,8 @@ public class GameActivity extends AppCompatActivity {
         mRoundNumber.setText(round);
 
         mGame.setupFight(mRound);
+        mBalancingCounter = 0;
+        mSpecialAttackUsed = false;
 
 
         mPlayerHealth.setText(mGame.getPlayerHealth());
@@ -85,28 +88,32 @@ public class GameActivity extends AppCompatActivity {
                 mPlayerOutputText.setText(playerAttack);
                 enemyAttack();
                 endGame();
+                mBalancingCounter++;
             }
         });
 
         mHeavyAttackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String attack = "Heavy Attack";
-                String playerAttack = mGame.playerAttacksEnemy(attack);
-                mPlayerOutputText.setText(playerAttack);
-                enemyAttack();
-                endGame();
+                if(mBalancingCounter > 4 && (mBalancingCounter%2)!=0){
+                    playerHeavyAttack();
+                    mBalancingCounter++;
+                }else{
+                    Toast.makeText(GameActivity.this, R.string.unavalible, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         mSpecialAttackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String attack = "Special Attack";
-                String playerAttack = mGame.playerAttacksEnemy(attack);
-                mPlayerOutputText.setText(playerAttack);
-                enemyAttack();
-                endGame();
+                if(mBalancingCounter > 4 && mSpecialAttackUsed == false){
+                    playerSpecialAttack();
+                    mBalancingCounter++;
+                    mSpecialAttackUsed = true;
+                }else{
+                    Toast.makeText(GameActivity.this, R.string.unavalible, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -165,6 +172,22 @@ public class GameActivity extends AppCompatActivity {
             Intent intent = new Intent(GameActivity.this, CheatingActivity.class);
             startActivity(intent);
         }
+    }
+
+    public void playerHeavyAttack(){
+        String attack = "Heavy Attack";
+        String playerAttack = mGame.playerAttacksEnemy(attack);
+        mPlayerOutputText.setText(playerAttack);
+        enemyAttack();
+        endGame();
+    }
+
+    public void playerSpecialAttack(){
+        String attack = "Special Attack";
+        String playerAttack = mGame.playerAttacksEnemy(attack);
+        mPlayerOutputText.setText(playerAttack);
+        enemyAttack();
+        endGame();
     }
 
 

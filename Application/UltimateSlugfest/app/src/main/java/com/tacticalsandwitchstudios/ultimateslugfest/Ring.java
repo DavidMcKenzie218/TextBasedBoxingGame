@@ -28,7 +28,7 @@ public class Ring {
 
     public String enemyAttacks(String attack, int enemyMissRate){
         int hitOrMiss = hitOrMiss(5);
-        if (hitOrMiss == enemyMissRate){
+        if (hitOrMiss > enemyMissRate){
             return enemyhasMissed();
         }else{
             return enemyHasHit(attack);

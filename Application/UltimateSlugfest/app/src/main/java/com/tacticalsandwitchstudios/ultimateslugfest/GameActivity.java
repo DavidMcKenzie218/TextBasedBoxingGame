@@ -36,6 +36,7 @@ public class GameActivity extends AppCompatActivity {
     int mRound;
     int mBalancingCounter;
     boolean mSpecialAttackUsed;
+    boolean mHeavyAttackUsed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -66,6 +67,7 @@ public class GameActivity extends AppCompatActivity {
         mGame.setupFight(mRound);
         mBalancingCounter = 0;
         mSpecialAttackUsed = false;
+        mHeavyAttackUsed = false;
 
 
         mPlayerHealth.setText(mGame.getPlayerHealth());
@@ -89,15 +91,17 @@ public class GameActivity extends AppCompatActivity {
                 enemyAttack();
                 endGame();
                 mBalancingCounter++;
+                mHeavyAttackUsed =false;
             }
         });
 
         mHeavyAttackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mBalancingCounter > 4 && (mBalancingCounter%2)!=0){
+                if(mBalancingCounter > 4 && mHeavyAttackUsed == false){
                     playerHeavyAttack();
                     mBalancingCounter++;
+                    mHeavyAttackUsed = true;
                 }else{
                     Toast.makeText(GameActivity.this, R.string.unavalible, Toast.LENGTH_SHORT).show();
                 }

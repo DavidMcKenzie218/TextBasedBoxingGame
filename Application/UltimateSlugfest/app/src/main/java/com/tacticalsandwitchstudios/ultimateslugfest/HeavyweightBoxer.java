@@ -17,7 +17,7 @@ public class HeavyweightBoxer extends Enemy {
         mLightAttackValue = 5;
         mHeavyAttackValue = 10;
         mSpecialAttackValue = 20;
-        mAttackRate = 7;
+        mAttackRate = 9;
         mMissRate = 2;
         mHealth = 150;
         mName = "BoneCrusher";

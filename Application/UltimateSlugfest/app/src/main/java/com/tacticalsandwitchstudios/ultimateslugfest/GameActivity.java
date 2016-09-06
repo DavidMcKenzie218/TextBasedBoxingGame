@@ -161,7 +161,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void caughtCheating(){
-
+        if(mRound > 0) {
+            Intent intent = new Intent(GameActivity.this, CheatingActivity.class);
+            startActivity(intent);
+        }
     }
 
 

@@ -30,7 +30,6 @@ public class Player {
         mLightAttackValue = 5;
         mHeavyAttackValue = 10;
         mSpecialAttackValue = 20;
-        mPowerUpAvalible = false;
 
     }
 

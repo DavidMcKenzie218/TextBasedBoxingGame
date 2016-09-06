@@ -28,7 +28,7 @@ public class CheatingActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 SavedTextPrefrences.removeStoredText(CheatingActivity.this, "roundNumber");
-                Intent intent = new Intent(CheatingActivity.this, GameActivity.class);
+                Intent intent = new Intent(CheatingActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });

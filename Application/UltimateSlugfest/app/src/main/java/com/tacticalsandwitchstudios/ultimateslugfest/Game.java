@@ -4,8 +4,7 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
  * Created by user on 04/09/2016.
  */
 public class Game {
-
-    int mFightNumber;
+    
     Player mPlayer;
     Enemyable mEnemy;
     Ring mRing;
@@ -81,21 +80,5 @@ public class Game {
         }
     }
 
-    public String winner(){
-        if(mEnemy.getHealth() == 0){
-            return mPlayer.getName();
-        }else {
-            return mEnemy.getName();
-        }
-    }
-
-    public void playerHasPoweredUp(int powerUpCount){
-       mRing.playerPoweredUp();
-    }
-
-
-    public void powerUpDataRetention(int powerUpCount){
-        mPlayer.setPowerUpCount(powerUpCount);
-    }
 }
 

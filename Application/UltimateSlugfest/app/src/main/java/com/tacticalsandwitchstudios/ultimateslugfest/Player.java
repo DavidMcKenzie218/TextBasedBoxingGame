@@ -16,6 +16,7 @@ public class Player {
     private int mSpecialAttackValue;
     private boolean mPowerUpAvalible;
     private int mPowerUpValue;
+    private int mPowerUpCount;
 
     private String[] mLightAttacks = {"Light Punch"};
     private String[] mHeavyAttacks = {"Heavy Punch"};
@@ -30,7 +31,7 @@ public class Player {
         mHeavyAttackValue = 10;
         mSpecialAttackValue = 20;
         mPowerUpAvalible = false;
-        mPowerUpValue = 0;
+
     }
 
     public String getName() {
@@ -61,6 +62,10 @@ public class Player {
         return mPowerUpValue;
     }
 
+    public int getPowerUpCount(){
+        return mPowerUpCount;
+    }
+
     //ARRAY LENGTHS
 
     public int lightAttackLenght() {
@@ -77,6 +82,13 @@ public class Player {
 
     public int missLength() {
         return mMiss.length;
+    }
+
+    //SETTERS
+
+    public void setPowerUpCount(int powerUpCount){
+        mPowerUpCount = powerUpCount;
+        mPowerUpAvalible = true;
     }
 
     //ATTACKS__OUTPUT
@@ -107,6 +119,15 @@ public class Player {
     public void playerHasPurchasedPowerUp(int powerUpValue){
         mPowerUpAvalible = true;
         mPowerUpValue = powerUpValue;
+        mPowerUpCount++;
+    }
+
+    public boolean hasPoweredUp(){
+        if(mPowerUpAvalible == true && mPowerUpCount>0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

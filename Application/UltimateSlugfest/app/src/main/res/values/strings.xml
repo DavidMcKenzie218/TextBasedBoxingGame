@@ -9,4 +9,6 @@
     <string name="start_game">Start Game</string>
     <string name="restart_game">Restart Game?</string>
     <string name="completed_message">Well Done On Completing the Game</string>
+    <string name="desc">An Image for the round counter in the style of a boxing timer</string>
+    <string name="powerUp">Power Up</string>
 </resources>

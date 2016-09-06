@@ -88,4 +88,14 @@ public class Game {
             return mEnemy.getName();
         }
     }
+
+    public void playerHasPoweredUp(int powerUpCount){
+       mRing.playerPoweredUp();
+    }
+
+
+    public void powerUpDataRetention(int powerUpCount){
+        mPlayer.setPowerUpCount(powerUpCount);
+    }
 }
+

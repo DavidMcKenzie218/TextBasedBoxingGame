@@ -9,6 +9,7 @@ public class Ring {
 
     Player mPlayer;
     Enemyable mEnemy;
+    int mPowerUpDamage;
 
     public Ring(Player player, Enemyable enemy){
         mPlayer = player;
@@ -66,21 +67,32 @@ public class Ring {
     }
 
     public String playerAttackOutput(int attackNumber, String attack){
+        if(playerPoweredUp() == true){
+            mPowerUpDamage = mPlayer.getPowerUpValue();
+        }else{
+            mPowerUpDamage = 0;
+        }
+        Log.d("TSB/Game/powerUpValue", Integer.toString(mPowerUpDamage));
         if (attack == "Light Attack"){
-            int playerDamage = mPlayer.getLightAttackValue();
+            int playerDamage = mPlayer.getLightAttackValue() + mPowerUpDamage;
             mEnemy.damageTaken(playerDamage);
             return mPlayer.playerHasUsedLightAttack(attackNumber);
         }else if (attack == "Heavy Attack"){
-            int playerDamage = mPlayer.getHeavyAttackValue();
+            int playerDamage = mPlayer.getHeavyAttackValue() + mPowerUpDamage;
             mEnemy.damageTaken(playerDamage);
             return mPlayer.playerHasUsedHeavyAttack(attackNumber);
         } else if (attack == "Special Attack"){
-            int playerDamage = mPlayer.getSpecialAttackValue();
+            int playerDamage = mPlayer.getSpecialAttackValue() + mPowerUpDamage;
             mEnemy.damageTaken(playerDamage);
             return mPlayer.playerHasUsedSpecialAttack(attackNumber);
         }else{
             return "No Attack Selected";
         }
+    }
+
+
+    public boolean playerPoweredUp(){
+        return mPlayer.hasPoweredUp();
     }
 
     //ENEMY

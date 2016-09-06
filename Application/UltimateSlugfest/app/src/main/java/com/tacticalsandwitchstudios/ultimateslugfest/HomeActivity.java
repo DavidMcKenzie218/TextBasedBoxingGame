@@ -28,7 +28,8 @@ public class HomeActivity extends AppCompatActivity{
         mStartGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SavedTextPrefrences.removeStoredText(HomeActivity.this);
+                SavedTextPrefrences.removeStoredText(HomeActivity.this, "roundNumber");
+                SavedTextPrefrences.removeStoredText(HomeActivity.this, "powerUpCount");
                 Intent intent = new Intent(HomeActivity.this, GameActivity.class);
                 startActivity(intent);
             }

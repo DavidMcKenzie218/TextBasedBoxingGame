@@ -27,7 +27,8 @@ public class CompletedActivity extends AppCompatActivity{
         mResartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SavedTextPrefrences.removeStoredText(CompletedActivity.this);
+                SavedTextPrefrences.removeStoredText(CompletedActivity.this, "roundNumber");
+                SavedTextPrefrences.removeStoredText(CompletedActivity.this, "powerUpCount");
                 Intent intent = new Intent(CompletedActivity.this, GameActivity.class);
                 startActivity(intent);
             }

@@ -75,4 +75,10 @@ public class PlayerUnitTests {
         assertEquals(10, player.getPowerUpValue());
     }
 
+    @Test
+    public void playerHasPurchesedOnePowerUp(){
+        player.playerHasPurchasedPowerUp(10);
+        assertEquals(1, player.getPowerUpCount());
+    }
+
 }

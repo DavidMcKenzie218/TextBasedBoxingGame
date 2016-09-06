@@ -44,8 +44,7 @@ public class IntermissionActivity extends AppCompatActivity{
         mPlayerHasPurchesedPowerUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int powerUpValue = mIntermission.getPowerUpRoidsValue();
-                mPlayer.playerHasPurchasedPowerUp(powerUpValue);
+                playerHasPowerdUp();
                 String boughtOutput = mIntermission.boughtOutput();
                 mPlayerOutput.setText(boughtOutput);
                 nextFight();
@@ -65,5 +64,12 @@ public class IntermissionActivity extends AppCompatActivity{
     public void nextFight(){
         Intent intent = new Intent(IntermissionActivity.this, GameActivity.class);
         startActivity(intent);
+    }
+
+    public void playerHasPowerdUp(){
+        int powerUpValue = mIntermission.getPowerUpRoidsValue();
+        mPlayer.playerHasPurchasedPowerUp(powerUpValue);
+        String powerUpCount = Integer.toString(mPlayer.getPowerUpCount());
+        SavedTextPrefrences.setStoredText(IntermissionActivity.this, "powerUpCount", powerUpCount);
     }
 }

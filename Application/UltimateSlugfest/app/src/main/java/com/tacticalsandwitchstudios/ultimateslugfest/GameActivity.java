@@ -21,6 +21,7 @@ public class GameActivity extends AppCompatActivity {
     Button mLightAttackButton;
     Button mHeavyAttackButton;
     Button mSpecialAttackButton;
+    Button mPowerUpButton;
 
     TextView mPlayerOutputText;
     TextView mEnemyOutPutText;
@@ -33,8 +34,7 @@ public class GameActivity extends AppCompatActivity {
     Game mGame;
     int mWhosTurn;
     int mRound;
-
-    private static Context mContext;
+    int mPowerUpCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -46,10 +46,12 @@ public class GameActivity extends AppCompatActivity {
         mWhosTurn = 0;
 
         whatRound();
+        setPowerUps();
 
         mLightAttackButton = (Button)findViewById(R.id.light_attack);
         mHeavyAttackButton = (Button)findViewById(R.id.heavy_attack);
         mSpecialAttackButton = (Button)findViewById(R.id.special_attack);
+        mPowerUpButton = (Button)findViewById(R.id.powerUp);
 
         mPlayerOutputText = (TextView)findViewById(R.id.player_output);
         mEnemyOutPutText = (TextView)findViewById(R.id.enemy_output);
@@ -60,7 +62,7 @@ public class GameActivity extends AppCompatActivity {
         mRoundNumber = (TextView)findViewById(R.id.round_number);
 
         String round = Integer.toString(mRound+1);
-        mRoundNumber.setText("Round "+round);
+        mRoundNumber.setText(round);
 
         mGame.setupFight(mRound);
 
@@ -69,6 +71,7 @@ public class GameActivity extends AppCompatActivity {
         mEnemyHealth.setText(mGame.getEnemyHealth());
         mPlayerName.setText(mGame.getPlayerName());
         mEnemyname.setText(mGame.getEnemyName());
+
 
 
         playerAttack();
@@ -111,6 +114,12 @@ public class GameActivity extends AppCompatActivity {
             }
         });
 
+        mPowerUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            powerUp();
+            }
+        });
 
     }
 
@@ -121,6 +130,10 @@ public class GameActivity extends AppCompatActivity {
         mEnemyOutPutText.setText(enemyAttack);
         mPlayerHealth.setText(mGame.getPlayerHealth());
         mEnemyHealth.setText(mGame.getEnemyHealth());
+    }
+
+    public void powerUp(){
+        mGame.playerHasPoweredUp(mPowerUpCount);
     }
 
     public void endGame(){
@@ -136,10 +149,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void whatRound(){
-        if (SavedTextPrefrences.getStoredText(this) == null){
+        if (SavedTextPrefrences.getStoredText(this, "roundNumber") == null){
             mRound = 0;
         }else {
-            mRound = Integer.parseInt(SavedTextPrefrences.getStoredText(this));
+            mRound = Integer.parseInt(SavedTextPrefrences.getStoredText(this, "roundNumber"));
         }
     }
 
@@ -149,10 +162,21 @@ public class GameActivity extends AppCompatActivity {
             startActivity(intent);
         }else{
             String roundToSave = Integer.toString(mRound);
-            SavedTextPrefrences.setStoredText(GameActivity.this, roundToSave);
+            SavedTextPrefrences.setStoredText(GameActivity.this, "roundNumber", roundToSave);
             Intent intent = new Intent(GameActivity.this, IntermissionActivity.class);
             startActivity(intent);
         }
+    }
+
+    public void setPowerUps(){
+        String savedText = SavedTextPrefrences.getStoredText(GameActivity.this, "powerUpCount");
+        if( savedText== null){
+            mPowerUpCount = 0;
+        }else{
+            mPowerUpCount = Integer.parseInt(savedText);
+            mGame.powerUpDataRetention(mPowerUpCount);
+        }
+
     }
 
 

@@ -34,7 +34,6 @@ public class GameActivity extends AppCompatActivity {
     Game mGame;
     int mWhosTurn;
     int mRound;
-    int mPowerUpCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -46,7 +45,6 @@ public class GameActivity extends AppCompatActivity {
         mWhosTurn = 0;
 
         whatRound();
-        setPowerUps();
 
         mLightAttackButton = (Button)findViewById(R.id.light_attack);
         mHeavyAttackButton = (Button)findViewById(R.id.heavy_attack);
@@ -78,8 +76,6 @@ public class GameActivity extends AppCompatActivity {
         }
 
     public void playerAttack() {
-
-
 
         mLightAttackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +113,7 @@ public class GameActivity extends AppCompatActivity {
         mPowerUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            powerUp();
+            caughtCheating();
             }
         });
 
@@ -130,10 +126,6 @@ public class GameActivity extends AppCompatActivity {
         mEnemyOutPutText.setText(enemyAttack);
         mPlayerHealth.setText(mGame.getPlayerHealth());
         mEnemyHealth.setText(mGame.getEnemyHealth());
-    }
-
-    public void powerUp(){
-        mGame.playerHasPoweredUp(mPowerUpCount);
     }
 
     public void endGame(){
@@ -168,14 +160,7 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-    public void setPowerUps(){
-        String savedText = SavedTextPrefrences.getStoredText(GameActivity.this, "powerUpCount");
-        if( savedText== null){
-            mPowerUpCount = 0;
-        }else{
-            mPowerUpCount = Integer.parseInt(savedText);
-            mGame.powerUpDataRetention(mPowerUpCount);
-        }
+    public void caughtCheating(){
 
     }
 

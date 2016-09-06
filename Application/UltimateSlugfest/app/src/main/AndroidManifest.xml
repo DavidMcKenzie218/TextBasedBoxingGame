@@ -23,7 +23,13 @@
 
         </activity>
         <activity
-            android:name=".CompletedActivity"></activity>
+            android:name=".CompletedActivity">
+
+        </activity>
+        <activity
+            android:name=".CheatingActivity">
+
+        </activity>
     </application>
 
 </manifest>

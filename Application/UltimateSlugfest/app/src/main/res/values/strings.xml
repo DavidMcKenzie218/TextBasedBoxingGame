@@ -11,4 +11,6 @@
     <string name="completed_message">Well Done On Completing the Game</string>
     <string name="desc">An Image for the round counter in the style of a boxing timer</string>
     <string name="powerUp">Power Up</string>
+    <string name="cheating_is_wrong">You have been caught cheating</string>
+    <string name="punishment">You have been disqualified.</string>
 </resources>

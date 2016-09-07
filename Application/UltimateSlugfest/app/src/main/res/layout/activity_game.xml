@@ -60,11 +60,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <ImageView
+        android:id="@+id/player_sprite"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@id/player_health"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"/>
+
+    <ImageView
+        android:id="@+id/enemy_sprite"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@id/enemy_health"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp" />
+
+
     <TextView
         android:id="@+id/player_output"
         android:textSize="20sp"
         android:text=""
         android:layout_marginLeft="5dp"
+        android:layout_marginTop="-20dp"
         android:layout_below="@+id/player_sprite"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
@@ -75,26 +94,13 @@
         android:textSize="20sp"
         android:text=""
         android:layout_marginRight="5dp"
+        android:layout_marginTop="-20dp"
         android:layout_below="@+id/enemy_sprite"
         android:layout_alignRight="@id/player_health"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:background="@color/colorWhite" />
 
-    <ImageView
-        android:id="@+id/player_sprite"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/player_health"
-        android:layout_width="wrap_content"
-        android:layout_height="160dp"/>
-
-    <ImageView
-        android:id="@+id/enemy_sprite"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/enemy_health"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="160dp" />
 
     <Button
         android:id="@+id/light_attack"

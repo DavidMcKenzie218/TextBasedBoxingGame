@@ -13,7 +13,7 @@ public class HeavyweightBoxer extends Enemy {
             "One-Two Punch"
     };
     private String[] mHeavyAttacks = {
-            "A cannon of Punch to the Face",
+            "A cannon of Punch",
             "HeadButt",
             "Roundhouse of Pain"
     };

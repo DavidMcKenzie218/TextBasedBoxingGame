@@ -62,7 +62,7 @@
 
     <TextView
         android:id="@+id/player_output"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:text=""
         android:layout_marginLeft="5dp"
         android:layout_below="@+id/player_sprite"
@@ -72,7 +72,7 @@
 
     <TextView
         android:id="@+id/enemy_output"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:text=""
         android:layout_marginRight="5dp"
         android:layout_below="@+id/enemy_sprite"

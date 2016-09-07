@@ -18,6 +18,8 @@ public class CompletedActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_completed);
 
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         mResartButton = (Button)findViewById(R.id.restart_game);
 
         restartGame();

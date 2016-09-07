@@ -26,6 +26,8 @@ public class IntermissionActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intermission);
 
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         mPlayerHasPurchesedPowerUp =
                 (Button)findViewById(R.id.bought_power_up);
         mPlayerHasRefusedPowerUp =

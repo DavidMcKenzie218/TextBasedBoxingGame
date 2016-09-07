@@ -18,6 +18,8 @@ public class CheatingActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheating);
 
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         mResartButton = (Button)findViewById(R.id.cheating_restart);
 
         restartGame();

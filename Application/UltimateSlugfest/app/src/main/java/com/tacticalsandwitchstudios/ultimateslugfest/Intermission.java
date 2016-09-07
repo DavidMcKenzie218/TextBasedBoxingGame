@@ -5,9 +5,18 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
  */
 public class Intermission {
 
-    String[] mBought = {"Bought"};
-    String[] mPassed = {"Passed"};
-    String[] mSalesPitches = {"Want to buy a Power Up?"};
+    String[] mBought = {
+            "You have succumbed to temptation",
+            "Here's to Hoping you don't get Caught"
+    };
+    String[] mPassed = {
+            "Mabey Next Time",
+            "I'm always around for when you give in"
+    };
+    String[] mSalesPitches = {
+            "Psst, Want to buy a Power Up?",
+            "Hey Weakling want to get Power"
+    };
     int mPowerUpRoids = 10;
 
     //GETTERS

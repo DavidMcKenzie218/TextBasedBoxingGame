@@ -29,7 +29,7 @@ public class FirstCreature extends Enemy {
         mSpecialAttackValue = 20;
         mAttackRate = 10;
         mMissRate = 4;
-        mName = "Boris";
+        mName = "What the Hell Is That!!!";
         mHealth = 180;
     }
 

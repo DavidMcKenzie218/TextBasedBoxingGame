@@ -6,9 +6,9 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
 public class FirstCreature extends Enemy {
 
     private String[] mLightAttacks = {
-            "Lashed out with the Tiger",
-            "A Raking swing with the Shark",
-            "The Donkey Spat in your Eye"
+            "Swiped by the Tiger",
+            "A Swing with the Shark",
+            "The Donkey Spat at You"
     };
     private String[] mHeavyAttacks = {
             "Mauled by the Tiger",
@@ -30,7 +30,7 @@ public class FirstCreature extends Enemy {
         mAttackRate = 10;
         mMissRate = 4;
         mName = "Boris";
-        mHealth = 220;
+        mHealth = 180;
     }
 
     public int lightAttackLength(){

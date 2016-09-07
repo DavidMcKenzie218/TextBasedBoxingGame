@@ -7,8 +7,16 @@ public class HeavyweightBoxer extends Enemy {
 
 
 
-    private String[] mLightAttacks = {"Light Punch"};
-    private String[] mHeavyAttacks = {"Heavy Punch"};
+    private String[] mLightAttacks = {
+            "A punch to the face",
+            "A flurry of Jabs",
+            "One-Two Punch to the Chest"
+    };
+    private String[] mHeavyAttacks = {
+            "A cannon of Punch to the Face",
+            "HeadButt",
+            ""
+    };
     private String[] mSpecialAttacks = {"Special Punch"};
     private String[] mMiss = {"Miss"};
 

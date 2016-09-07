@@ -10,7 +10,7 @@ public class Game {
     Ring mRing;
 
     public Game(){
-        mPlayer = new Player("David");
+        mPlayer = new Player("Challenger");
     }
 
     public void setupFight(int round){

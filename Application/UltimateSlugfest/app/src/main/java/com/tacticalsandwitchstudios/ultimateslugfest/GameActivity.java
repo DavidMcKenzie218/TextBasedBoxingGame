@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,9 @@ public class GameActivity extends AppCompatActivity {
     TextView mPlayerName;
     TextView mEnemyname;
     TextView mRoundNumber;
+
+    ImageView mPlayerSprite;
+    ImageView mEnemySprite;
 
     Game mGame;
     int mRound;
@@ -60,6 +64,8 @@ public class GameActivity extends AppCompatActivity {
         mPlayerName = (TextView)findViewById(R.id.player_name);
         mEnemyname = (TextView)findViewById(R.id.enemy_name);
         mRoundNumber = (TextView)findViewById(R.id.round_number);
+        mPlayerSprite = (ImageView)findViewById(R.id.player_sprite);
+        mEnemySprite = (ImageView)findViewById(R.id.enemy_sprite);
 
         String round = Integer.toString(mRound+1);
         mRoundNumber.setText(round);
@@ -74,6 +80,12 @@ public class GameActivity extends AppCompatActivity {
         mEnemyHealth.setText(mGame.getEnemyHealth());
         mPlayerName.setText(mGame.getPlayerName());
         mEnemyname.setText(mGame.getEnemyName());
+        mPlayerSprite.setImageResource(R.drawable.boxer_player);
+        if (mRound == 0) {
+            mEnemySprite.setImageResource(R.drawable.bocer_bone_crusher);
+        }else{
+            mEnemySprite.setImageResource(R.drawable.it);
+        }
 
 
 

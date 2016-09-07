@@ -18,10 +18,25 @@ public class Player {
     private int mPowerUpValue;
     private int mPowerUpCount;
 
-    private String[] mLightAttacks = {"Light Punch"};
-    private String[] mHeavyAttacks = {"Heavy Punch"};
-    private String[] mSpecialAttacks = {"Special Punch"};
-    private String[] mMiss = {"Miss"};
+    private String[] mLightAttacks = {
+            "A Short Sharp Jab",
+            "Punch to the Arm",
+            "Punch to the Chest"
+    };
+    private String[] mHeavyAttacks = {
+            "Hook to the Jaw",
+            "Uppercut",
+            "A flurry of headshots"
+    };
+    private String[] mSpecialAttacks = {
+            "Kick to the Groin",
+            "Elbow to the throat"
+    };
+    private String[] mMiss = {
+            "Slipped and Missed",
+            "Distracted by the Crowd",
+            "How did you miss that?"
+    };
 
     //GETTERS
 

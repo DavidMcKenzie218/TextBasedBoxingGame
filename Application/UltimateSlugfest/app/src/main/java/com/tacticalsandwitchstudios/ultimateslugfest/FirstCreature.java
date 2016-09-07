@@ -15,7 +15,7 @@ public class FirstCreature extends Enemy {
             "Body Slammed by the Shark"
     };
     private String[] mSpecialAttacks = {
-            "The Donkey has Gone Berzerk",
+            "The Donkey is Berzerk",
             "WTF is it Doing Now"
     };
     private String[] mMiss = {

@@ -10,7 +10,7 @@ public class HeavyweightBoxer extends Enemy {
     private String[] mLightAttacks = {
             "A punch to the face",
             "A flurry of Jabs",
-            "One-Two Punch to the Chest"
+            "One-Two Punch"
     };
     private String[] mHeavyAttacks = {
             "A cannon of Punch to the Face",
@@ -22,8 +22,8 @@ public class HeavyweightBoxer extends Enemy {
             "BOOM Headshot"
     };
     private String[] mMiss = {
-            "Distracted by Something Shiny",
-            "Blinded by the Stage Lights"
+            "Distracted by Shiny",
+            "Blinded by the Lights"
     };
 
 

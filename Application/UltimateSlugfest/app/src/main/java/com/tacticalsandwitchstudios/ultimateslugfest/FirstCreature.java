@@ -5,10 +5,22 @@ package com.tacticalsandwitchstudios.ultimateslugfest;
  */
 public class FirstCreature extends Enemy {
 
-    private String[] mLightAttacks = {"Light Punch"};
-    private String[] mHeavyAttacks = {"Heavy Punch"};
-    private String[] mSpecialAttacks = {"Special Punch"};
-    private String[] mMiss = {"Miss"};
+    private String[] mLightAttacks = {
+            "Lashed out with the Tiger",
+            "A Raking swing with the Shark",
+            "The Donkey Spat in your Eye"
+    };
+    private String[] mHeavyAttacks = {
+            "Mauled by the Tiger",
+            "Body Slammed by the Shark"
+    };
+    private String[] mSpecialAttacks = {
+            "The Donkey has Gone Berzerk",
+            "WTF is it Doing Now"
+    };
+    private String[] mMiss = {
+            "Succumbed to Infighting"
+    };
 
 
     public FirstCreature(){

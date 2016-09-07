@@ -84,7 +84,7 @@ public class GameActivity extends AppCompatActivity {
         mEnemyname.setText(mGame.getEnemyName());
         mPlayerSprite.setImageResource(R.drawable.boxer_player);
         if (mRound == 0) {
-            mEnemySprite.setImageResource(R.drawable.bocer_bone_crusher);
+            mEnemySprite.setImageResource(R.drawable.boxer_bone_crusher);
         }else{
             mEnemySprite.setImageResource(R.drawable.it);
         }

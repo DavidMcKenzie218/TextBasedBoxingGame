@@ -15,10 +15,16 @@ public class HeavyweightBoxer extends Enemy {
     private String[] mHeavyAttacks = {
             "A cannon of Punch to the Face",
             "HeadButt",
-            ""
+            "Roundhouse of Pain"
     };
-    private String[] mSpecialAttacks = {"Special Punch"};
-    private String[] mMiss = {"Miss"};
+    private String[] mSpecialAttacks = {
+            "The SKULL CRUSHER!",
+            "BOOM Headshot"
+    };
+    private String[] mMiss = {
+            "Distracted by Something Shiny",
+            "Blinded by the Stage Lights"
+    };
 
 
     public HeavyweightBoxer(){

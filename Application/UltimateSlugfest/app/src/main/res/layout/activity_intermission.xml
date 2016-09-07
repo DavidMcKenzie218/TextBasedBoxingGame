@@ -15,7 +15,8 @@
         android:textSize="25sp"
         android:layout_below="@id/want_to_power_up"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"/>
 
     <Button
         android:id="@+id/refused_power_up"
@@ -24,7 +25,8 @@
         android:layout_below="@id/want_to_power_up"
         android:layout_toRightOf="@id/bought_power_up"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/button" />
 
     <TextView
         android:id="@+id/player_choice_output"
